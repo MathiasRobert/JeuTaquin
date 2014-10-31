@@ -1,4 +1,9 @@
+package controleurs;
+
 import javax.swing.JButton;
+
+import vues.Vue;
+import modeles.Modele;
 
 /**
  * 
@@ -19,10 +24,10 @@ public class Controleur {
 	}
 
 	public void newControleurClavier() {
-		vue.getVueGrille().addKeyListener(new ControleurClavier(modele));
+		vue.getVueEnJeu().addKeyListener(new ControleurClavier(modele));
 	}
 	
 	public void newControleurClickBouton(JButton bouton) {
-		bouton.addActionListener(new ControleurClickBouton(modele, vue.getVueGrille()));
+		bouton.addActionListener(new ControleurClickBouton(modele, vue.getVueEnJeu()));
 	}
 }

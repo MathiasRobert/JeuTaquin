@@ -1,3 +1,5 @@
+package modeles;
+
 import java.awt.Color;
 
 public class Jeton extends Case {

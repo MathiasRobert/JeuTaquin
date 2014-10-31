@@ -1,3 +1,7 @@
+import controleurs.*;
+import vues.*;
+import modeles.*;
+
 /**
  * 
  */
@@ -16,5 +20,4 @@ public class Main {
 		Vue vue = new Vue(modele);
 		Controleur controleur =  new Controleur(modele, vue);
 	}
-
 }

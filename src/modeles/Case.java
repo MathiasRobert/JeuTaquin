@@ -1,3 +1,5 @@
+package modeles;
+
 public class Case {
 	protected int indiceX;
 	protected int indiceY;

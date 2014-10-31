@@ -1,3 +1,5 @@
+package modeles;
+
 public abstract class Constantes {
 	/**
 	 * nombre de lignes de la surface de jeu

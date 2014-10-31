@@ -1,3 +1,5 @@
+package modeles;
+
 import java.util.Observable;
 
 /**
@@ -10,13 +12,16 @@ import java.util.Observable;
  */
 public class Modele extends Observable{
 	Grille grille;
+	int nbDeCoups;
 	
 	public Modele() {
 		grille = new Grille();
+		nbDeCoups = 1;
 	}
 	
 	public void recommencer() {
 		grille.reinitialiser();
+		nbDeCoups = 0;
 		setChanged();
 		notifyObservers();
 	}
@@ -65,6 +70,7 @@ public class Modele extends Observable{
 				if (mouvFait) {
 					box.verifPlacement();
 					box.majCouleur();
+					nbDeCoups++;
 					setChanged();
 					notifyObservers();
 					break;
@@ -89,6 +95,10 @@ public class Modele extends Observable{
 
 	public Grille getGrille() {
 		return grille;
+	}
+
+	public int getNbDeCoups() {
+		return nbDeCoups;
 	}
 
 }

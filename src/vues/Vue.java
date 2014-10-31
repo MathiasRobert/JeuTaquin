@@ -1,7 +1,12 @@
+package vues;
+
 import java.util.Observable;
 import java.util.Observer;
 
 import javax.swing.JFrame;
+
+import controleurs.Controleur;
+import modeles.Modele;
 
 /**
  * 
@@ -18,41 +23,42 @@ public class Vue extends JFrame implements Observer {
 	private static final long serialVersionUID = -598600068637201269L;
 	Modele modele;
 	Controleur controleur;
-	VueGrille vueGrille;
+	VueEnJeu vueEnJeu;
 
 	public Vue(Modele modele) {
 		setTitle("Jeu du taquin");
 		setSize(1000, 1000);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
-		
+
 		this.modele = modele;
 		modele.addObserver(this);
-				
-		vueGrille = new VueGrille(modele.getGrille());
-		add(vueGrille);
+
+		vueEnJeu = new VueEnJeu(modele);
+		setContentPane(vueEnJeu);
 		setFocusable(false);
-		vueGrille.setFocusable(true);
+		vueEnJeu.setFocusable(true);
+
 		setVisible(true);
-		vueGrille.setBounds(100,100,900,900);
 	}
-	
+
 	/**
 	 * @return the vueGrille
 	 */
-	public VueGrille getVueGrille() {
-		return vueGrille;
+	public VueEnJeu getVueEnJeu() {
+		return vueEnJeu;
 	}
 
 	@Override
 	public void update(Observable o, Object arg) {
-		vueGrille.repaint();
+		vueEnJeu.repaint();
+		vueEnJeu.majLabelNbDeCoups();
 	}
 
 	public void addControleur(Controleur controleur) {
 		this.controleur = controleur;
 		controleur.newControleurClavier();
-		vueGrille.initControleurBouton(controleur);
+		vueEnJeu.initControleurBouton(controleur);
 	}
 
 }

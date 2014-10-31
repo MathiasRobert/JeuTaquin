@@ -1,5 +1,10 @@
+package controleurs;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+
+import modeles.Modele;
+import modeles.Constantes;
 
 /**
  * 
@@ -18,13 +23,13 @@ public class ControleurClavier extends KeyAdapter {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) { // flèche droite
+		if (e.getKeyCode() == KeyEvent.VK_RIGHT) { // fl��che droite
 			modele.deplacement(Constantes.Direction.DROITE);
-		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) { // flèche gauche
+		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) { // fl��che gauche
 			modele.deplacement(Constantes.Direction.GAUCHE);
-		} else if (e.getKeyCode() == KeyEvent.VK_UP) { // flèche haut
+		} else if (e.getKeyCode() == KeyEvent.VK_UP) { // fl��che haut
 			modele.deplacement(Constantes.Direction.HAUT);
-		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) { // flèche bas
+		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) { // fl��che bas
 			modele.deplacement(Constantes.Direction.BAS);
 		}
 	}
