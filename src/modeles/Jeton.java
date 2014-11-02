@@ -1,6 +1,7 @@
 package modeles;
 
 import java.awt.Color;
+import java.awt.Rectangle;
 
 public class Jeton extends Case {
 
@@ -53,6 +54,10 @@ public class Jeton extends Case {
 			this.color = new Color(102, 204, 0);
 		else
 			this.color = new Color(255, 102, 102);
+	}
+	
+	public Rectangle getRectJeton() {
+		return new Rectangle(getX(), getY(),getLargeur(),getHauteur());
 	}
 
 }

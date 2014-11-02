@@ -30,4 +30,8 @@ public class Controleur {
 	public void newControleurClickBouton(JButton bouton) {
 		bouton.addActionListener(new ControleurClickBouton(modele, vue.getVueEnJeu()));
 	}
+
+	public void newControleurClickJeton() {
+		vue.getVueEnJeu().addMouseListener(new ControleurClickJeton(modele));
+	}
 }

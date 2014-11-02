@@ -23,13 +23,13 @@ public class ControleurClavier extends KeyAdapter {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if (e.getKeyCode() == KeyEvent.VK_RIGHT) { // fl��che droite
+		if (e.getKeyCode() == KeyEvent.VK_RIGHT) { // fleche droite
 			modele.deplacement(Constantes.Direction.DROITE);
-		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) { // fl��che gauche
+		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) { // fleche gauche
 			modele.deplacement(Constantes.Direction.GAUCHE);
-		} else if (e.getKeyCode() == KeyEvent.VK_UP) { // fl��che haut
+		} else if (e.getKeyCode() == KeyEvent.VK_UP) { // fleche haut
 			modele.deplacement(Constantes.Direction.HAUT);
-		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) { // fl��che bas
+		} else if (e.getKeyCode() == KeyEvent.VK_DOWN) { // fleche bas
 			modele.deplacement(Constantes.Direction.BAS);
 		}
 	}

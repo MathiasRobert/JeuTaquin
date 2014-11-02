@@ -58,6 +58,7 @@ public class Vue extends JFrame implements Observer {
 	public void addControleur(Controleur controleur) {
 		this.controleur = controleur;
 		controleur.newControleurClavier();
+		controleur.newControleurClickJeton();
 		vueEnJeu.initControleurBouton(controleur);
 	}
 

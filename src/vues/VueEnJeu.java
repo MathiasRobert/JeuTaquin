@@ -38,7 +38,7 @@ public class VueEnJeu extends JPanel {
 		setLayout(null);
 
 		vueGrille = new VueGrille(modele.getGrille());
-		vueGrille.setBounds(200, 100, 900, 900);
+		vueGrille.setBounds(Constantes.POSITION_X_VUEGRILLE, Constantes.POSITION_Y_VUEGRILLE, 900, 900);
 		initBoutons();
 		initLabels();
 		add(vueGrille);
